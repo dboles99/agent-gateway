@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.25,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-gateway"
+version = "0.1.0"
+description = "Admission control, budgets, loop detection, checkpoints and task packet dispatch for coding agents."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Daniel Boles" }]
+dependencies = [
+    "jsonschema>=4.22,<5",
+    "python-dotenv>=1.0,<2",
+    "PyYAML>=6.0,<7",
+    "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2,<10"]
+
+[project.scripts]
+agent-gateway = "agent_gateway.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_gateway"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,20 @@
+# Set model_tag to a model you have pulled, and mode to manual, to use the pool.
+version: 1
+defaults:
+  enabled: true
+  mode: disabled
+  cloud_calls: false
+  base_url: http://127.0.0.1:11434
+models:
+  local-reviewer:
+    model_tag: your-model:latest
+    execution: local
+    enabled: true
+    status: experimental
+    lifecycle: candidate
+    roles: [critic, shadow-reviewer]
+    privacy_classes: [public, internal]
+    timeout_seconds: 300
+    max_output_tokens: 1000
+    write_permission: none
+    requires_primary_review: true

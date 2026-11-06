@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Context Capsule",
+  "type": "object",
+  "required": [
+    "capsule_id",
+    "target_model",
+    "purpose",
+    "content",
+    "limits",
+    "dependency_hash"
+  ],
+  "properties": {
+    "capsule_id": {
+      "type": "string"
+    },
+    "target_model": {
+      "enum": [
+        "primary",
+        "fallback",
+        "worker",
+        "light"
+      ]
+    },
+    "purpose": {
+      "type": "object",
+      "required": [
+        "action",
+        "task_id"
+      ],
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "task_id": {
+          "type": "string"
+        }
+      }
+    },
+    "content": {
+      "type": "object"
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "maximum_fresh_tokens",
+        "maximum_total_tokens"
+      ],
+      "properties": {
+        "maximum_fresh_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maximum_total_tokens": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "dependency_hash": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

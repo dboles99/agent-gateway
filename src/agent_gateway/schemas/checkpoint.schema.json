@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Orchestrator Checkpoint",
+  "type": "object",
+  "required": [
+    "checkpoint_version",
+    "project_id",
+    "active_model",
+    "scope",
+    "completed_tasks",
+    "active_tasks",
+    "blocked_tasks",
+    "next_actions"
+  ],
+  "properties": {
+    "checkpoint_version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "active_model": {
+      "enum": [
+        "primary",
+        "fallback"
+      ]
+    },
+    "scope": {
+      "type": "object"
+    },
+    "completed_tasks": {
+      "type": "array"
+    },
+    "active_tasks": {
+      "type": "array"
+    },
+    "blocked_tasks": {
+      "type": "array"
+    },
+    "unresolved_decisions": {
+      "type": "array"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fallback_activated": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

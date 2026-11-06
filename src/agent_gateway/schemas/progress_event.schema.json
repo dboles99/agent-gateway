@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Progress Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp",
+    "run_id",
+    "task_id",
+    "event_type",
+    "status"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "progress_weight": {
+      "type": "integer"
+    },
+    "input_tokens": {
+      "type": "integer"
+    },
+    "output_tokens": {
+      "type": "integer"
+    },
+    "cache_read_tokens": {
+      "type": "integer"
+    },
+    "cache_write_tokens": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true
+}

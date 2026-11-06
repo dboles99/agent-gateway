@@ -1,0 +1,24 @@
+# A rule pack. The lowest priority number is checked first and the first match wins.
+# A rule that asks for something the context does not supply does not fire.
+rulepack:
+  id: RELEASE-GATE
+  version: "1"
+  rules:
+    - id: RG-001
+      priority: 10
+      when: change.touches_credentials == true
+      action: REJECT
+      severity: HIGH
+    - id: RG-002
+      priority: 20
+      when: change.tests_passed == false
+      action: REJECT
+      severity: HIGH
+    - id: RG-003
+      priority: 30
+      when: change.review_confidence < 0.9
+      action: HUMAN_REVIEW
+    - id: RG-004
+      priority: 40
+      when: change.tests_passed == true and change.review_confidence >= 0.9
+      action: ACCEPT

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Packet",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "execution_id",
+    "task_id",
+    "capability",
+    "objective",
+    "inputs",
+    "acceptance",
+    "budget",
+    "stop_condition"
+  ],
+  "properties": {
+    "protocol_version": {
+      "type": "string"
+    },
+    "execution_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "permitted_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget": {
+      "type": "object"
+    },
+    "stop_condition": {
+      "type": "string"
+    },
+    "checkpoint_path": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

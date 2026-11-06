@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Worker Result Packet",
+  "type": "object",
+  "required": [
+    "execution_id",
+    "task_id",
+    "status",
+    "artifacts",
+    "validation",
+    "unresolved"
+  ],
+  "properties": {
+    "execution_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed",
+        "blocked",
+        "interrupted"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "validation": {
+      "type": "object"
+    },
+    "unresolved": {
+      "type": "array"
+    },
+    "progress_proofs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

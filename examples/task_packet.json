@@ -1,0 +1,11 @@
+{
+  "protocol_version": "1.0",
+  "execution_id": "exec-1",
+  "task_id": "t-1",
+  "capability": "text.word_count",
+  "objective": "Count the words in the supplied text.",
+  "inputs": {"text": "four words of text"},
+  "acceptance": ["word_count artifact is present"],
+  "budget": {"max_turns": 1},
+  "stop_condition": "the count has been reported"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Definition",
+  "type": "object",
+  "required": ["name", "description"],
+  "properties": {
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "model": { "type": "string" },
+    "tools": {},
+    "model_selector": {
+      "type": "object",
+      "properties": {
+        "provider": { "enum": ["claude", "ollama"] },
+        "model": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "skill_allowlist": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "privacy_policy": {
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "hooks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "loop_policy": {
+      "type": "object",
+      "properties": {
+        "max_iterations": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "write_authority": {
+      "enum": ["none", "artifact-only", "staging-only", "full"]
+    },
+    "requires_primary_review": { "type": "boolean" },
+    "runtime_target": { "enum": ["any", "linux", "macos", "windows", "wsl"] }
+  },
+  "additionalProperties": true
+}

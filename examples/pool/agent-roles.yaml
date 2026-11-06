@@ -1,0 +1,10 @@
+version: 1
+roles:
+  critic:
+    purpose: Find defects and missing tests in a proposed change.
+    write_permission: none
+    requires_primary_review: true
+  shadow-reviewer:
+    purpose: Review finished work without blocking it.
+    write_permission: none
+    requires_primary_review: true

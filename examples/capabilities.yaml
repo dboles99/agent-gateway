@@ -1,0 +1,15 @@
+# A capability is declared before it has a handler.
+#
+#   handler absent        deliberately unbuilt: dispatch answers capability_unbuilt
+#   handler unresolvable  a defect: `gateway capabilities` exits 1
+#
+# `handler` is imported and called, so treat this file as code.
+capabilities:
+  - id: text.word_count
+    executor: demo word counter
+    handler: agent_gateway.demo:word_count
+    required_outputs:
+      - word_count
+
+  - id: text.summarise
+    executor: not written yet
