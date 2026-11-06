@@ -52,7 +52,7 @@ flowchart TD
 Python 3.12 or newer.
 
 ```bash
-git clone <this repository>
+git clone https://github.com/dboles99/agent-gateway.git
 cd agent-gateway
 python -m venv .venv
 .venv/bin/pip install -e ".[dev]"     # Windows: .venv\Scripts\pip
