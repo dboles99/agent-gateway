@@ -1,5 +1,7 @@
 # agent-gateway
 
+**[Read the wiki](https://github.com/dboles99/agent-gateway/wiki)** for how it works, the evidence, the design decisions and the limits.
+
 Governance plumbing for coding agents: it decides what an agent may be asked to do, notices when the agent stops making progress, and gives other programs one checked way to dispatch work.
 
 **简体中文：** agent-gateway 是面向编码智能体的治理工具包。它在任务开始前检查任务是否合格、预算是否足够，在运行中发现重复调用和停滞，并通过统一的任务包接口派发工作。每一次拒绝都会返回结构化结果，而不是抛出异常。
